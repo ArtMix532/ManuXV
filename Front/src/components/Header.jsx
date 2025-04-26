@@ -7,8 +7,8 @@ export function Header() {
     <div>
       <Divider />
       <div className="pt-3 flex justify-between px-2">
-        <img src={LogoManu} alt="" className="h-16 " />
-          <MenuDefault />
+        <img src={LogoManu} alt="" className="h-16 md:h-24" />
+        <MenuDefault />
       </div>
     </div>
   );

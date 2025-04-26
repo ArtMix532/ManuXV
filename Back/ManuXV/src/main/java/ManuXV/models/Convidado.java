@@ -13,6 +13,7 @@ import jakarta.validation.constraints.Size;
 @Entity
 @Table(name = "Convidado")
 public class Convidado {
+    
     public interface CreateConvidado {}
     public interface UpdateConvidado {}
 
@@ -31,13 +32,11 @@ public class Convidado {
 
     @Column(name = "n_convidados", nullable = false)
     @NotNull(groups = CreateConvidado.class)
-    @NotEmpty(groups = CreateConvidado.class)
     private Integer n_convidados;
 
     @Column(name = "presenca", nullable = false)
     @NotNull(groups = {CreateConvidado.class, UpdateConvidado.class})
-    @NotEmpty(groups = {CreateConvidado.class, UpdateConvidado.class})
-    private boolean presenca;
+    private Boolean presenca;
 
 
 
