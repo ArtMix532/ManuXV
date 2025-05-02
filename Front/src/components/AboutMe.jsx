@@ -4,15 +4,15 @@ import { SectionTitle } from "./SectionTitle";
 export function AboutMe() {
   return (
     <div className="flex flex-col">
-      <div className=" md:flex md:justify-end  ">
-        <p className="font-lora text-gray-600 md:w-1/2">
+      <div className=" md:flex md:px-64">
+        <p className="font-lora text-gray-600">
           Tô passando pra falar que se você chegou nesse site saiba o quanto é
           importante sua presença na realização desse sonho: meus 15 anos. Aqui
-          você encontrará todas as informações nescessárias para o meu grande
+          você encontrará todas as informações necessárias para o meu grande
           dia.
         </p>
       </div>
-      <div className="mt-4 md:grid md:grid-cols-5 md:grid-rows-5">
+      <div className="mt-4 md:grid md:grid-cols-5 md:gap-x-32 md:grid-rows-5">
         <div className="col-span-2">
           <SectionTitle text="Meus 15 Anos" />
         </div>

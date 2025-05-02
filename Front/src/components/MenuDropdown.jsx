@@ -5,14 +5,14 @@ import {
   MenuItem,
   Button,
 } from "@material-tailwind/react";
-import FlorClara from "../assets/FlorClara2.png";
+import FlorEscura from "../assets/FlorEscura.png";
 
 export function MenuDefault() {
   return (
     <Menu>
       <MenuHandler>
         <Button className="flex bg-ManuLilasButton rounded-full font-lora text-2xl items-center">
-          <img src={FlorClara} alt="" style={{ width: "30px" }} />
+          <img src={FlorEscura} alt="" style={{ width: "30px" }} />
           Menu
         </Button>
       </MenuHandler>

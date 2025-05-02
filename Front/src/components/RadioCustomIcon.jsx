@@ -2,7 +2,7 @@ import { Radio } from "@material-tailwind/react";
 
 export function RadioCustomIcon({ presenca, setPresenca }) {
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col md:flex md:flex-col md:px-72">
       <Radio
         name="type"
         label="Sim"

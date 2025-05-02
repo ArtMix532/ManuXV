@@ -2,7 +2,7 @@ import LogoManu from "../assets/LogoManu2.png";
 
 export function Footer() {
   return (
-    <div className="bg-ManuRoxoFooter w-full">
+    <div className="bg-ManuRoxoFooter w-full md:flex md:flex-col md:text-center md:items-center">
       <div className="flex mx-2 py-3 ">
         <img src={LogoManu} alt="" className="h-10 " />
         <p className="text-gray-200 font-lora mt-2">

@@ -55,23 +55,14 @@ export function Confirmation({
   };
 
   return (
-    <div className="mt-4">
-      {alertMessage && (
-        <Alert
-          key={alertMessage.key}
-          title={alertMessage.title}
-          message={alertMessage.message}
-          type={alertMessage.type}
-          onClose={() => setAlertMessage(null)}
-        />
-      )}
+    <div className="mt-4 md:flex md:flex-col md:text-center">
       <SectionTitle text="Confirmação de presença" />
       <p className="font-lora text-gray-600 mt-4">
         Para nos ajudar com o planejamento desse dia tão especial, é muito
         importante que você confirme sua presença e de seus acompanhantes!
       </p>
       <div className="my-3 flex justify-center">
-        <div className="w-3/4 h-10 border border-gray-400 bg-ivory outline-none flex items-center px-2">
+        <div className="w-3/4 md:w-96  h-10 border border-gray-400 bg-ivory outline-none flex items-center px-2">
           <input
             ref={inputRef}
             type="text"
