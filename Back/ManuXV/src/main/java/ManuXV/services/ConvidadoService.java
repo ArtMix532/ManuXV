@@ -1,5 +1,7 @@
 package ManuXV.services;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,20 @@ public class ConvidadoService {
         obj = this.convidadoRepository.save(obj);
         return obj;
     }
+
+    @Transactional
+    public List<Convidado> CreateConvidadoAll(List<Convidado> convidados){
+        List<Convidado> savedConvidados = new ArrayList<>();
+    
+        for (Convidado convidado : convidados) {
+            convidado.setId(null);
+            savedConvidados.add(this.convidadoRepository.save(convidado));
+        }
+    
+        return savedConvidados;
+    }
+    
+
     
     @Transactional
     public Convidado UpdateConvidado(Convidado obj){

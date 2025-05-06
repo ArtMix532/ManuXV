@@ -1,8 +1,10 @@
 package ManuXV.controllers;
 
 import java.net.URI;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -66,6 +68,15 @@ public class ConvidadoController {
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
         return ResponseEntity.created(uri).build();
     } 
+
+@PostMapping("/convidado/all")
+public ResponseEntity<List<Convidado>> createAll(@RequestBody List<Convidado> convidados){
+
+    List<Convidado> saved = this.convidadoService.CreateConvidadoAll(convidados);
+
+    return ResponseEntity.status(HttpStatus.CREATED).body(saved);
+}
+
 
 
     @PutMapping("/convidado/{id}")
