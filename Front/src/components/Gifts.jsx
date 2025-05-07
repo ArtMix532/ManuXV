@@ -20,13 +20,16 @@ export function Gifts() {
       style={{
         backgroundImage: isMobile ? `url(${ManuGradiente})` : "none",
       }}
-      className="mt-4 bg-cover bg-no-repeat bg-center md:bg-none md:bg-ManuRoxo md:grid md:grid-cols-2"
+      className="mt-4 md:bg-cover md:bg-no-repeat md:bg-center md:bg-none md:bg-ManuRoxo md:grid md:grid-cols-2"
     >
       <div>
         <div className="px-4 ">
           <div className="flex gap-1 items-center">
             <img src={FlorClara} alt="" className="h-14" />
-            <span className="text-2xl font-bold font-lora text-ManuNeve">
+            <span
+              id="gifts"
+              className="text-2xl font-bold font-lora text-ManuNeve"
+            >
               Presentes
             </span>
           </div>
@@ -43,7 +46,7 @@ export function Gifts() {
             mimo ; )
           </p>
           <div className="pt-44 md:pt-4">
-            <p className="bg-ManuNeve px-4 py-2 font-lora text-gray-600 text-xs opacity-90 md:w-6/12">
+            <div className="bg-ManuNeve px-4 py-2 font-lora text-gray-600 text-xs opacity-90 md:w-6/12">
               O que comprar para Manu?
               <ul className="list-disc">
                 <li>Bijuterias/Semi Joias: de preferência prateadas</li>
@@ -55,13 +58,17 @@ export function Gifts() {
                   frutados e florais
                 </li>
               </ul>
-            </p>
+            </div>
           </div>
         </div>
       </div>
-      <div className="h-full flex mx-auto my-auto">
-        <img src={ManuLago} alt="" className="" />
-      </div>
+      {isMobile ? (
+        ""
+      ) : (
+        <div className="h-full flex mx-auto my-auto">
+          <img src={ManuLago} alt="" className="" />
+        </div>
+      )}
     </div>
   );
 }

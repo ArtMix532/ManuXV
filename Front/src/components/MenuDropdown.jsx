@@ -17,9 +17,18 @@ export function MenuDefault() {
         </Button>
       </MenuHandler>
       <MenuList>
-        <MenuItem>Menu Item 1</MenuItem>
-        <MenuItem>Menu Item 2</MenuItem>
-        <MenuItem>Menu Item 3</MenuItem>
+        <a href="#about" className="scroll-smooth">
+          <MenuItem>Sobre mim</MenuItem>
+        </a>
+        <a href="#location" className="scroll-smooth">
+          <MenuItem>Local da festa</MenuItem>
+        </a>
+        <a href="#gifts" className="scroll-smooth">
+          <MenuItem>Presentes</MenuItem>
+        </a>
+        <a href="#confirmation" className="scroll-smooth">
+          <MenuItem>Confirmação de presença</MenuItem>
+        </a>
       </MenuList>
     </Menu>
   );

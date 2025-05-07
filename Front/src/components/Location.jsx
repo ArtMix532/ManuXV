@@ -4,7 +4,7 @@ export function Location() {
   return (
     <div className="mt-4 md:grid md:grid-cols-5 md:grid-rows-5 md:justify-end">
       <div className="col-span-3 col-start-3 row-start-1 md:flex md:justify-end">
-        <SectionTitle text="A festa" />
+        <SectionTitle text="A festa" id="location" />
       </div>
       <div className="flex justify-center md:col-span-2 md:row-span-5 md:col-start-1 md:row-start-1">
         <iframe

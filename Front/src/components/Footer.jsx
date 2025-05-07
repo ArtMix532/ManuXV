@@ -20,7 +20,11 @@ export function Footer() {
       <div className="flex justify-center mx-2 py-3 mt-4">
         <p className="font-bold text-gray-200">
           Feito por{" "}
-          <a className="hover:text-gray-400 underline" href="">
+          <a
+            target="_blank"
+            className="hover:text-gray-400 underline"
+            href="https://artmix532.github.io/Dav.Links/"
+          >
             Davi Benjamim
           </a>
         </p>

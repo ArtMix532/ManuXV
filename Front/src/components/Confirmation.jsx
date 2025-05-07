@@ -56,7 +56,7 @@ export function Confirmation({
 
   return (
     <div className="mt-4 md:flex md:flex-col md:text-center">
-      <SectionTitle text="Confirmação de presença" />
+      <SectionTitle text="Confirmação de presença" id="confirmation"/>
       <p className="font-lora text-gray-600 mt-4">
         Para nos ajudar com o planejamento desse dia tão especial, é muito
         importante que você confirme sua presença e de seus acompanhantes!

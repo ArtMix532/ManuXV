@@ -2,7 +2,6 @@ import { InputConfirmation } from "./InputConfimation";
 import { RadioCustomIcon } from "./RadioCustomIcon";
 import { useRef, useState } from "react";
 import React from "react";
-import { Alert } from "./Alert";
 
 export function ConfirmationGuests({
   nameConvidado,
@@ -14,14 +13,7 @@ export function ConfirmationGuests({
   const [presenca, setPresenca] = useState("Não");
 
   const inputRefs = useRef([]);
-  const [alertMessage, setAlertMessage] = useState(null);
 
-  const showAlert = (title, message, type) => {
-    setAlertMessage(null);
-    setTimeout(() => {
-      setAlertMessage({ title, message, type });
-    }, 10);
-  };
 
   if (inputRefs.current.length !== acompanhantes) {
     inputRefs.current = Array(acompanhantes)
@@ -31,8 +23,6 @@ export function ConfirmationGuests({
 
   const postAcompanhantes = async () => {
     setTemAcompanhantes(false);
-    console.log("ID do convidado:", idConvidado);
-    console.log("Presença:", presenca);
 
     const nomes = inputRefs.current.map((ref) => ref.current?.value);
     let numConvidados = 0;
@@ -40,7 +30,6 @@ export function ConfirmationGuests({
     for (let i = 0; i < nomes.length; i++) {
       if (nomes[i] == "") {
         numConvidados = numConvidados + 1;
-        console.log("oi");
         continue;
       } else {
         try {
@@ -88,9 +77,6 @@ export function ConfirmationGuests({
     } catch (error) {
       console.error("Erro na requisição:", error);
     }
-
-    console.log("Nomes acompanhantes:", nomes);
-    console.log(numConvidados);
   };
 
   if (!temAcompanhantes) {

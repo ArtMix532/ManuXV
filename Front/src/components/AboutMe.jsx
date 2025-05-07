@@ -14,7 +14,7 @@ export function AboutMe() {
       </div>
       <div className="mt-4 md:grid md:grid-cols-5 md:gap-x-32 md:grid-rows-5">
         <div className="col-span-2">
-          <SectionTitle text="Meus 15 Anos" />
+          <SectionTitle text="Meus 15 Anos" id="about" />
         </div>
         <img
           src={ManuSelva}
