@@ -2,6 +2,7 @@ import { InputConfirmation } from "./InputConfimation";
 import { RadioCustomIcon } from "./RadioCustomIcon";
 import { useRef, useState } from "react";
 import React from "react";
+import { Alert } from "./Alert";
 
 export function ConfirmationGuests({
   nameConvidado,
@@ -14,6 +15,13 @@ export function ConfirmationGuests({
 
   const inputRefs = useRef([]);
 
+  const [alertMessage, setAlertMessage] = useState(null);
+  const showAlert = (title, message, type) => {
+    setAlertMessage(null);
+    setTimeout(() => {
+      setAlertMessage({ title, message, type });
+    }, 10);
+  };
 
   if (inputRefs.current.length !== acompanhantes) {
     inputRefs.current = Array(acompanhantes)
@@ -48,6 +56,8 @@ export function ConfirmationGuests({
 
           if (!response.ok) {
             console.error("Erro ao salvar acompanhante:", nomes[i]);
+          } else {
+            showAlert("Sucesso", "Presença confrimada com sucesso!", "success");
           }
         } catch (error) {
           console.error("Erro ao salvar acompanhante:", nomes[i], error);
@@ -81,17 +91,27 @@ export function ConfirmationGuests({
 
   if (!temAcompanhantes) {
     return (
-      <p className="font-lora text-gray-600 mt-4 pb-4 md:flex md:flex-col md:text-center">
-        Favor digitar o código de confirmação de presença disponível no seu
-        convite, e confirmar até dia 31/05 <br /> <br />
-        Atenção: crianças menores de 12 anos não precisam ser incluídas como
-        acompanhantes
-      </p>
+      <div>
+        <p className="font-lora text-gray-600 mt-4 pb-4 md:flex md:flex-col md:text-center">
+          Favor digitar o código de confirmação de presença disponível no seu
+          convite, e confirmar até dia 31/05 <br /> <br />
+          Atenção: crianças menores de 12 anos não precisam ser incluídas como
+          acompanhantes
+        </p>
+        {alertMessage && (
+          <Alert
+            key={alertMessage.key}
+            title={alertMessage.title}
+            message={alertMessage.message}
+            type={alertMessage.type}
+            onClose={() => setAlertMessage(null)}
+          />
+        )}
+      </div>
     );
   } else {
     return (
       <div className="pb-4 relative md:flex md:flex-col md:text-center">
-
         <p className="font-lora text-gray-600 mt-4">
           {nameConvidado}, você estará presente nos tão sonhados 15 anos da
           Manu?

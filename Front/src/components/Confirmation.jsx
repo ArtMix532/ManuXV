@@ -1,7 +1,6 @@
 import { SectionTitle } from "./SectionTitle";
 import { SendHorizontal } from "lucide-react";
-import { useRef, useState } from "react";
-import { Alert } from "./Alert";
+import { useRef } from "react";
 
 export function Confirmation({
   setAcompanhantes,
@@ -10,14 +9,6 @@ export function Confirmation({
   setIdConvidado,
 }) {
   const inputRef = useRef(null);
-
-  const [alertMessage, setAlertMessage] = useState(null);
-  const showAlert = (title, message, type) => {
-    setAlertMessage(null);
-    setTimeout(() => {
-      setAlertMessage({ title, message, type });
-    }, 10);
-  };
 
   const getAcompanhantes = async () => {
     const nameConvidado = inputRef.current.value;
@@ -56,7 +47,7 @@ export function Confirmation({
 
   return (
     <div className="mt-4 md:flex md:flex-col md:text-center">
-      <SectionTitle text="Confirmação de presença" id="confirmation"/>
+      <SectionTitle text="Confirmação de presença" id="confirmation" />
       <p className="font-lora text-gray-600 mt-4">
         Para nos ajudar com o planejamento desse dia tão especial, é muito
         importante que você confirme sua presença e de seus acompanhantes!
