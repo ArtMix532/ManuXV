@@ -1,6 +1,6 @@
 # ManuXV 🎭
 
-Projeto completo de uma aplicação web para uma cliente, com frontend moderno em React e backend robusto em Java Spring Boot, totalmente integrado a banco de dados em nuvem hospedado na Azure.
+Projeto completo de uma aplicação web para uma cliente, com frontend moderno em React e backend robusto em Java Spring Boot, totalmente integrado a banco de dados em nuvem hospedado na Azure!
 
 ## 🔗 Links Principais
 
